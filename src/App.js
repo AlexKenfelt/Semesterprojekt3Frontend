@@ -6,6 +6,7 @@ import Home from './components/home';
 import Header from './components/header';
 import User from "./components/user";
 import Admin from "./components/admin";
+import FoodPlan from "./components/FoodPlan";
 import {
   BrowserRouter as Router,
   Switch,
@@ -51,6 +52,9 @@ function App() {
     <Route exact path="/admin">
     {facade.hasUserAccess('admin', loggedIn) && 
               <Admin facade={facade} setErrorMessage={setErrorMessage} />}
+    </Route>
+    <Route exact path="/foodplan">
+              <FoodPlan facade={facade} setErrorMessage={setErrorMessage} />}
     </Route>
   </Switch>
     </div>
