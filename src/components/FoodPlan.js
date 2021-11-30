@@ -34,6 +34,34 @@ function FoodPlan({facade, setErrorMessage}) {
     return ( 
         <div>
             <h1>Make your food plan </h1>
+
+            <div>
+            <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">monday</th>
+                            <th scope="col">tuesday</th>
+                            <th scope="col">wednesday</th>
+                            <th scope="col">thursday</th>
+                            <th scope="col">friday</th>
+                            <th scope="col">saturday</th>
+                            <th scope="col">sunday</th>
+                            <th scope="col">u48</th>
+                        </tr>
+                </thead>
+                <tbody>
+                    {recipes.map((r ) => {
+                        return(
+                            <tr key={r.id}>
+                                <td>{r.title}</td>
+                        
+                            </tr>
+                        )
+                    })}                   
+                </tbody>
+                </table>
+            </div>
+
             <ul>{recipes.map((r) => <li key={r.id}> {r.title}</li>)}</ul> 
             <button onClick={handleClick}>Random</button>
 
