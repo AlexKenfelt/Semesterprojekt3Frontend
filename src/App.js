@@ -54,7 +54,7 @@ function App() {
               <Admin facade={facade} setErrorMessage={setErrorMessage} />}
     </Route>
     <Route exact path="/foodplan">
-              <FoodPlan facade={facade} setErrorMessage={setErrorMessage} />}
+              <FoodPlan facade={facade} setErrorMessage={setErrorMessage} />
     </Route>
   </Switch>
     </div>
