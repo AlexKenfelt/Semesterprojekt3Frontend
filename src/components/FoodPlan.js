@@ -20,12 +20,24 @@ function FoodPlan({facade, setErrorMessage}) {
         facade.fetchData('recipe/weekly', updateRecipes, setErrorMessage);
     };
 
+    const saveData = (evt) => {
+        evt.preventDefault();
+        console.log("Saving weekly plan") 
+        facade.saveData('recipe/weekly/SuperAwesomeUser/48', updateSaveData, setErrorMessage, recipes);
+    }
+
+    const updateSaveData = (data) => {
+        console.log(data)
+        setErrorMessage(JSON.stringify(data))
+    }
 
     return ( 
         <div>
             <h1>Make your food plan </h1>
             <ul>{recipes.map((r) => <li key={r.id}> {r.title}</li>)}</ul> 
             <button onClick={handleClick}>Random</button>
+
+            <button onClick={saveData}>Confirm</button>
         </div>
      );
 

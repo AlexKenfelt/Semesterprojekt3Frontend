@@ -35,9 +35,28 @@ const login = (user, password, setLoggedIn, setErrorMessage) =>
         });
 }
 
+
+
 const fetchData = (endpoint, updateAction, SetErrorMessage) =>
 {
     const options = makeOptions("GET", true); //True add's the token
+    return fetch(URL + "/api/" + endpoint, options)
+        .then(handleHttpErrors)
+        .then((data) => updateAction(data))
+        .catch(err =>
+        {
+            if (err.status)
+            {
+                console.log(err)
+                err.fullError.then(e => SetErrorMessage(e.code + ": " + e.message))
+            }
+            else { SetErrorMessage("Network error"); }
+        })
+}
+
+const saveData = (endpoint, updateAction, SetErrorMessage, body) =>
+{
+    const options = makeOptions("POST", true, body); //True add's the token
     return fetch(URL + "/api/" + endpoint, options)
         .then(handleHttpErrors)
         .then((data) => updateAction(data))
@@ -84,6 +103,18 @@ const fetchData = (endpoint, updateAction, SetErrorMessage) =>
         } else return ""
     }
 
+    const getUserName = () =>
+    {
+        const token = getToken()
+        if (token != null)
+        {
+            const payloadBase64 = getToken().split('.')[1]
+            const decodedClaims = JSON.parse(window.atob(payloadBase64))
+            const username = decodedClaims.username
+            return username
+        } else return ""
+    }
+
     const hasUserAccess = (neededRole, loggedIn) =>
     {
         const roles = getUserRoles().split(',')
@@ -110,15 +141,19 @@ const fetchData = (endpoint, updateAction, SetErrorMessage) =>
         return opts;
     }
 
+    
+
     return {
         makeOptions,
         fetchData,
+        saveData,
         setToken,
         getToken,
         loggedIn,
         login,
         logout,
         getUserRoles,
+        getUserName,
         hasUserAccess,
     }
 
