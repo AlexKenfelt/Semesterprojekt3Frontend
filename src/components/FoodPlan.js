@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 //parameters from the URL. And packs the recipes togheter as one big json string.
 
 function FoodPlan({facade, setErrorMessage}) {
-
+    var check = false;
     const[recipes, setRecipes] = useState([]);
 
     const updateRecipes = (data) => {
@@ -14,15 +14,33 @@ function FoodPlan({facade, setErrorMessage}) {
         setRecipes(data.recipes);
     }
 
+    //Brug ikke functionen før vi får sat en "limited" på
     const handleClick = (facade, setErrorMessage) => {
-       // facade.fetchData('recipe/weekly', updateRecipes, setErrorMessage);
+        
+        if (check == false) {
+            //facade.fetchData('recipe/weekly', updateRecipes, setErrorMessage);
+            check = true
+            console.log("check" + check)
+
+             
+        }
+        const button = document.querySelector('button');
+
+        button.addEventListener('click', event => {
+         button.textContent = `Click count: ${event.detail}`;
+        
+        });
+
+        console.log("check"+ check);
+       
     };
+
 
     return ( 
         <div>
             <h1>Make your food plan </h1>
             <ul>{recipes.map((r) => <li key={r.id}> {r.title}</li>)}</ul> 
-            <button onClick={handleClick(facade, setErrorMessage)}>Random</button>
+            <button id="button" onClick={handleClick(facade, setErrorMessage)}>Random</button>
         </div>
      );
 
