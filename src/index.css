@@ -1,3 +1,4 @@
+/** CSS for body **/ 
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,6 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/** CSS for the old navbar, let's keep this for now **/
 ul.header {
   list-style-type: none;
   border: 1px solid black;
@@ -26,12 +28,21 @@ ul.header {
   text-decoration: none;
  }
 
+ /** Navbar CSS **/
+ .navbar.bg-light {
+  background-color: #f3e2b3 !important;
+ }
+
+ .form-control {
+  border-radius: 4.25rem;
+  }
+
+/** This is not currently being used right? **/
  ul.header li a:hover:not(.active) { background-color: rgb(240, 240, 240);}
  .active { background-color: #d8d8d8;}
 
 
- /* foodplan */
-
+ /* Weekly Food Plan CSS */
 th {
   margin: 0;
   border: 1px solid;
