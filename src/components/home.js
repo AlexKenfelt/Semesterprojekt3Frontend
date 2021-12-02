@@ -1,19 +1,11 @@
 import React, { useEffect, useState } from "react";
 import LogIn from './Login';
 
-function Home({ logout, loggedIn, setLoggedIn, facade, setErrorMessage }) {
+function Home() {
   
   return (
     <div>
-      <h1>Home</h1>
-      {!loggedIn ? (
-        <LogIn facade={facade} setLoggedIn={setLoggedIn} setErrorMessage={setErrorMessage} />
-      ) : (
-        <div>
-          <p><button onClick={logout}>Logout</button></p>
-          <p>Role: {facade.getUserRoles()}</p>
-        </div>
-      )}
+      <h1>Yo Yo Yo, Welcome to this awesome homepage</h1>
     </div>
   );
 }
