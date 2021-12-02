@@ -67,7 +67,7 @@ function FoodPlan({facade, setErrorMessage}) {
         </div>
      );
 
-
+     
 }
 
 export default FoodPlan;
