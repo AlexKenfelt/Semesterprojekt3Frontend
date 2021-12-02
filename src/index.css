@@ -25,5 +25,47 @@ ul.header {
   padding: 14px 16px;
   text-decoration: none;
  }
+<<<<<<< HEAD
  ul.header li a:hover:not(.active) { background-color: rgb(240, 240, 240);}
  .active { background-color: #d8d8d8;}
+=======
+ ul.header li a:hover:not(.active) { background-color: #111;}
+ .active { background-color: #4CAF50;}
+
+ /* foodplan */
+
+th {
+  margin: 0;
+  border: 1px solid;
+  padding: 10px;
+  content: 50px;
+  font-family: 'Segoe UI';
+}
+
+td{
+  margin-bottom: 0;
+  border: 1px solid;
+  padding: 40px;
+  content: 70px;
+  width: 100%;
+  font-family: 'Segoe UI';
+}
+
+th.col {
+  
+  text-align: left top;
+}
+
+tr {
+  width: 100%;
+}
+
+ul.li{
+  margin-bottom: 0;
+  border: 1px solid;
+  padding: 40px;
+  content: 70px;
+  width: 100%;
+}
+
+>>>>>>> alex
