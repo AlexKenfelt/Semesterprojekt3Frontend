@@ -1,3 +1,4 @@
+/** CSS for body **/ 
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,6 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/** CSS for the old navbar, let's keep this for now **/
 ul.header {
   list-style-type: none;
   border: 1px solid black;
@@ -43,13 +45,37 @@ ul.header {
   color: black;
 }
 
+<<<<<<< HEAD
+=======
+ /** Navbar CSS **/
+ .navbar.bg-light {
+  background-color: #f3e2b3 !important;
+ }
+
+ .form-control {
+  border-radius: 4.25rem;
+  }
+
+/** This is not currently being used right? **/
+>>>>>>> 4a67d72750d82dbfe8057ab060344a73f6baa85f
  ul.header li a:hover:not(.active) { background-color: rgb(240, 240, 240);}
  .active { background-color: #d8d8d8;}
 
 
- /* foodplan */
 
-th {
+ /* Weekly Food Plan CSS */
+
+
+table {
+  table-layout: fixed;
+  tab-size: 100px;
+  width: 100%;
+  background-color: #E9ECF0;
+
+}
+
+ th {
+
   margin: 0;
   border: 1px solid;
   padding: 10px;
@@ -57,13 +83,24 @@ th {
   font-family: 'Segoe UI';
 }
 
-td{
+td {
   margin-bottom: 0;
-  border: 1px solid;
   padding: 40px;
   content: 70px;
-  width: 100%;
   font-family: 'Segoe UI';
+  font-size: smaller;
+  height: 370px;
+
+
+}
+
+td.dinner {
+  position: fixed;
+  margin-left: 900px;
+  float: left;
+  color: solid black;
+  font-style: bold;
+  
 }
 
 th.col {
@@ -75,10 +112,34 @@ tr {
   width: 100%;
 }
 
-ul.li{
-  margin-bottom: 0;
-  border: 1px solid;
-  padding: 40px;
-  content: 70px;
-  width: 100%;
+button.random {
+  background-color: #E9ECF0; 
+  border: none;
+  color: black;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  
 }
+
+button.confirm {
+  background-color: greenyellow; 
+  border: none;
+  color: black;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+>>>>>>> 4a67d72750d82dbfe8057ab060344a73f6baa85f

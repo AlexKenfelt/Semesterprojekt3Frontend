@@ -1,15 +1,15 @@
 import {NavLink} from "react-router-dom";
 
-export default function Header() {
+export default function Header({ logout }) {
     return (
       //<a> tags needs to be Navlink tags inorder to works fx set change profile once it is made. 
     <div>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-    <img src="https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""/>
-    Bootstrap
-  </a>
+    <NavLink class="navbar-brand" to="/home">
+    <img src="https://previews.123rf.com/images/larryrains/larryrains1606/larryrains160600061/57535585-happy-tomato.jpg" width="30" height="30" class="d-inline-block align-top" alt=""/>
+      Home
+  </NavLink>
     <form class="form-inline  ">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
 
@@ -25,9 +25,11 @@ export default function Header() {
         <NavLink class="nav-link" to="/home">Home<span class="sr-only">(current)</span></NavLink>
       </li>
       <li class="nav-item active">
-        <NavLink class="nav-link" to="/foodplan">Weekly Meal Plan<span class="sr-only">(current)</span></NavLink>
+        <NavLink class="nav-link" to="/foodplan">Weekly planner<span class="sr-only">(current)</span></NavLink>
       </li>
-
+      <li class="nav-item active">
+        <NavLink class="nav-link" to="/groceries">Groceries<span class="sr-only">(current)</span></NavLink>
+      </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-display="static" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Profile

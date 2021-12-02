@@ -18,6 +18,8 @@ import {
   Prompt
 } from "react-router-dom";
 import LoginPage from "./components/LoginPage";
+import Profile from "./components/Profile";
+import Groceries from "./components/Groceries";
 
  
 
@@ -35,11 +37,10 @@ function App() {
 
   return (
     <div>
-  <Header facade={facade} loggedIn={loggedIn} />
+  <Header facade={facade} loggedIn={loggedIn} logout={logout} />
   <Switch>
   <Route exact path="/">
     <LoginPage
-              logout={logout}
               loggedIn={loggedIn}
               setLoggedIn={setLoggedIn}
               facade={facade}
@@ -59,6 +60,12 @@ function App() {
     </Route>
     <Route exact path="/foodplan">
               <FoodPlan facade={facade} setErrorMessage={setErrorMessage} />
+    </Route>
+    <Route exact path="/profile">
+              <Profile facade={facade} setErrorMessage={setErrorMessage} />
+    </Route>
+    <Route exact path="/groceries">
+              <Groceries facade={facade} setErrorMessage={setErrorMessage} />
     </Route>
   </Switch>
     </div>
