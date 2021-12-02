@@ -17,6 +17,7 @@ import {
   NavLink,
   Prompt
 } from "react-router-dom";
+import LoginPage from "./components/LoginPage";
 
  
 
@@ -36,14 +37,17 @@ function App() {
     <div>
   <Header facade={facade} loggedIn={loggedIn} />
   <Switch>
-    <Route exact path="/">
-    <Home
+  <Route exact path="/">
+    <LoginPage
               logout={logout}
               loggedIn={loggedIn}
               setLoggedIn={setLoggedIn}
               facade={facade}
               setErrorMessage={setErrorMessage}
             />
+    </Route>
+    <Route exact path="/home">
+    <Home/>
     </Route>
     <Route exact path="/user">
     {facade.hasUserAccess('user', loggedIn) && 

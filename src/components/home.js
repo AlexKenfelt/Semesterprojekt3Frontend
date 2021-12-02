@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import LogIn from './Login';
 
-function Home({ logout, loggedIn, setLoggedIn, facade, setErrorMessage }) {
+function Home() {
   
   return (
+<<<<<<< HEAD
    
     <div class=".container">
       <div class="login">
@@ -18,6 +19,10 @@ function Home({ logout, loggedIn, setLoggedIn, facade, setErrorMessage }) {
       </div>
 
       <img src="Background.png" class="background-image"/>
+=======
+    <div>
+      <h1>Yo Yo Yo, Welcome to this awesome homepage</h1>
+>>>>>>> 95fc9d9cd946cfb3bad20c1265df20f6c58af549
     </div>
 
   );
