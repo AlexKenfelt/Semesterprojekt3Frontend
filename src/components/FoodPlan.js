@@ -33,7 +33,7 @@ function FoodPlan({facade, setErrorMessage}) {
 
     return ( 
         <div>
-            <h1>Make your food plan </h1>
+            <h1 class="foodTitle">Make your food plan </h1>
 
             <div>
             <table class="table table-bordered">
@@ -53,21 +53,23 @@ function FoodPlan({facade, setErrorMessage}) {
                     <tr>
                     {recipes.map((r) => {
                         return(
-                                <td>{r.title}</td>  
+                                <td>{r.title}</td>
+                          
                         )
                     })}
-                    </tr>                   
+                    
+                    </tr> 
+                    <td class="dinner"> dinner </td>                  
                 </tbody>
                 </table>
             </div>
+            <button class="random" onClick={handleClick}>Random</button>
 
-            <button onClick={handleClick}>Random</button>
-
-            <button onClick={saveData}>Confirm</button>
+            <button class="confirm" onClick={saveData}>Confirm</button>
         </div>
      );
 
-     
+
 }
 
 export default FoodPlan;

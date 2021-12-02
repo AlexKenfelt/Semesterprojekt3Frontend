@@ -25,16 +25,21 @@ ul.header {
   padding: 14px 16px;
   text-decoration: none;
  }
-<<<<<<< HEAD
  ul.header li a:hover:not(.active) { background-color: rgb(240, 240, 240);}
  .active { background-color: #d8d8d8;}
-=======
- ul.header li a:hover:not(.active) { background-color: #111;}
- .active { background-color: #4CAF50;}
+
 
  /* foodplan */
 
-th {
+table {
+  table-layout: fixed;
+  tab-size: 100px;
+  width: 100%;
+  background-color: #E9ECF0;
+  
+}
+
+ th {
   margin: 0;
   border: 1px solid;
   padding: 10px;
@@ -42,13 +47,24 @@ th {
   font-family: 'Segoe UI';
 }
 
-td{
+td {
   margin-bottom: 0;
-  border: 1px solid;
   padding: 40px;
   content: 70px;
-  width: 100%;
   font-family: 'Segoe UI';
+  font-size: smaller;
+  height: 370px;
+
+
+}
+
+td.dinner {
+  position: fixed;
+  margin-left: 900px;
+  float: left;
+  color: solid black;
+  font-style: bold;
+  
 }
 
 th.col {
@@ -60,12 +76,29 @@ tr {
   width: 100%;
 }
 
-ul.li{
-  margin-bottom: 0;
-  border: 1px solid;
-  padding: 40px;
-  content: 70px;
-  width: 100%;
+button.random {
+  background-color: #E9ECF0; 
+  border: none;
+  color: black;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  
 }
 
->>>>>>> alex
+button.confirm {
+  background-color: greenyellow; 
+  border: none;
+  color: black;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+
+
+
