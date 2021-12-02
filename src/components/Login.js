@@ -20,6 +20,7 @@ export default function LogIn({ facade, setLoggedIn, setErrorMessage })
             <h2>Login</h2>
             <form onChange={onChange} >
                 <input placeholder="User Name" id="username" />
+                <br/>
                 <input placeholder="Password" id="password" />
                 <button onClick={performLogin}>Login</button>
             </form>
