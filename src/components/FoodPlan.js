@@ -50,14 +50,13 @@ function FoodPlan({facade, setErrorMessage}) {
                         </tr>
                 </thead>
                 <tbody>
-                    {recipes.map((r ) => {
+                    <tr>
+                    {recipes.map((r) => {
                         return(
-                            <tr key={r.id}>
-                                <td>{r.title}</td>
-                        
-                            </tr>
+                                <td>{r.title}</td>  
                         )
-                    })}                   
+                    })}
+                    </tr>                   
                 </tbody>
                 </table>
             </div>
