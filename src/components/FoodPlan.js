@@ -61,7 +61,6 @@ function FoodPlan({facade, setErrorMessage}) {
                 </table>
             </div>
 
-            <ul>{recipes.map((r) => <li key={r.id}> {r.title}</li>)}</ul> 
             <button onClick={handleClick}>Random</button>
 
             <button onClick={saveData}>Confirm</button>
