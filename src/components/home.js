@@ -4,8 +4,9 @@ import LogIn from './Login';
 function Home({ logout, loggedIn, setLoggedIn, facade, setErrorMessage }) {
   
   return (
-    <div>
-      <h1>Home</h1>
+   
+    <div class=".container">
+      <div class="login">
       {!loggedIn ? (
         <LogIn facade={facade} setLoggedIn={setLoggedIn} setErrorMessage={setErrorMessage} />
       ) : (
@@ -14,7 +15,11 @@ function Home({ logout, loggedIn, setLoggedIn, facade, setErrorMessage }) {
           <p>Role: {facade.getUserRoles()}</p>
         </div>
       )}
+      </div>
+
+      <img src="Background.png" class="background-image"/>
     </div>
+
   );
 }
 
