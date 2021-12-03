@@ -8,15 +8,18 @@ import { useEffect, useState } from "react";
 function FoodPlan({facade, setErrorMessage}) {
 
     const[recipes, setRecipes] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     const updateRecipes = (data) => {
         console.log(data)
         setRecipes(data.recipes);
+        setIsLoading(false)
     }
 
     const handleClick = (evt) => {
         evt.preventDefault();
         console.log("Hello World!") 
+        setIsLoading(false)
         facade.fetchData('recipe/weekly', updateRecipes, setErrorMessage);
     };
 
@@ -34,7 +37,7 @@ function FoodPlan({facade, setErrorMessage}) {
     return ( 
         <div>
             <h1 class="foodTitle">Make your food plan </h1>
-
+            
             <div>
             <table class="table table-bordered">
                     <thead>
@@ -51,14 +54,14 @@ function FoodPlan({facade, setErrorMessage}) {
                 </thead>
                 <tbody>
                     <tr>
-                    {recipes.map((r) => {
+                        {recipes.length === 0 ? <><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></>: recipes.map((r) => {
                         return(
                                 <td>{r.title}</td>
                           
                         )
                     })}
-                    <td class="dinner"> dinner </td>  
-                    </tr>             
+                    <td class="dinner"> dinner </td> 
+                    </tr> 
                 </tbody>
                 </table>
             </div>
