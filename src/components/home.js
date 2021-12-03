@@ -4,9 +4,15 @@ import LogIn from './Login';
 function Home() {
   
   return (
-    <div class="container">
-      <h1>Yo Yo Yo, Welcome to this awesome homepage</h1>
+    <div>
+    <div className = "bg-image">
+          <img height="100%" width="100%" src = {require ("../images/Background.png").default}/>
+        </div>
+
+    <div className="home-text">
+      <h1>homepage</h1>
       
+    </div>
     </div>
 
   );

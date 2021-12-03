@@ -10,11 +10,8 @@ function LoginPage({ logout, loggedIn, setLoggedIn, facade, setErrorMessage }) {
           <img height="100%" width="100%" src = {require ("../images/Background.png").default}/>
         </div>
 
-
     <div>
-    
     <div>
-
       {!loggedIn ? (
         <LogIn facade={facade} setLoggedIn={setLoggedIn} setErrorMessage={setErrorMessage} />
       ) : (
@@ -23,9 +20,7 @@ function LoginPage({ logout, loggedIn, setLoggedIn, facade, setErrorMessage }) {
           <p>Role: {facade.getUserRoles()}</p>
         </div>
       )}
-      </div>
-
-        
+      </div> 
     </div>
     </div>
   );

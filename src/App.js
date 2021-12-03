@@ -18,6 +18,7 @@ import {
   Prompt
 } from "react-router-dom";
 import LoginPage from "./components/LoginPage";
+import Frontpage from "./components/Frontpage";
 
  
 
@@ -38,6 +39,9 @@ function App() {
   <Header facade={facade} loggedIn={loggedIn} />
   <Switch>
   <Route exact path="/">
+    <Frontpage/>
+    </Route>
+  <Route exact path="/login">
     <LoginPage
               logout={logout}
               loggedIn={loggedIn}
