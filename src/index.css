@@ -26,21 +26,26 @@ ul.header {
   text-decoration: none;
  }
 
- .container {
-  position: absolute;
-}
-
 .bg-image {
   opacity: 0.3;
-  position: fixed; 
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
 }
 
 .login {
-  text-align: center;
-  position: absolute;
-  left: 75%;
-  top: 250px;
-  color: black;
+  display: flex;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  background-color: #C7D3F1;
 }
 
  ul.header li a:hover:not(.active) { background-color: rgb(240, 240, 240);}
