@@ -59,8 +59,7 @@ td {
 }
 
 td.dinner {
-  position: fixed;
-  margin-left: 900px;
+  position: absolute;
   float: left;
   color: solid black;
   font-style: bold;
