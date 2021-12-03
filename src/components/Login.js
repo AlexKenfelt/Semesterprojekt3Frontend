@@ -17,12 +17,11 @@ export default function LogIn({ facade, setLoggedIn, setErrorMessage })
 
     return (
         <div>
-            <h2>Login</h2>
-            <form onChange={onChange} >
-                <input placeholder="User Name" id="username" />
-                <br/>
-                <input placeholder="Password" id="password" />
-                <button onClick={performLogin}>Login</button>
+            <form onChange={onChange} className="login" >
+                <h2>login</h2>
+                <input style={{textAlign:"center"}} placeholder="username" id="username" />
+                <input style={{textAlign:"center"}} placeholder="password" id="password" />
+                <button onClick={performLogin}>login</button>
             </form>
         </div>
     )

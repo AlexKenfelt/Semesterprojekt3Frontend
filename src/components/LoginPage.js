@@ -3,15 +3,14 @@ import LogIn from './Login';
 function LoginPage({ logout, loggedIn, setLoggedIn, facade, setErrorMessage }) {
   
   return (
-
-<div className="container">
+<div>
         
         <div className = "bg-image">
-          <img src = {require ("../images/Background.png").default}/>
+          <img height="100%" width="100%" src = {require ("../images/Background.png").default}/>
         </div>
 
-    <div className = "login">
-
+    <div>
+    <div>
       {!loggedIn ? (
         <LogIn facade={facade} setLoggedIn={setLoggedIn} setErrorMessage={setErrorMessage} />
       ) : (
@@ -20,9 +19,8 @@ function LoginPage({ logout, loggedIn, setLoggedIn, facade, setErrorMessage }) {
           <p>Role: {facade.getUserRoles()}</p>
         </div>
       )}
-      </div>
-
-        
+      </div> 
+    </div>
     </div>
   );
 }

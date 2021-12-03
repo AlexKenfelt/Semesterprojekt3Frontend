@@ -20,6 +20,8 @@ import {
 import LoginPage from "./components/LoginPage";
 import Profile from "./components/Profile";
 import Groceries from "./components/Groceries";
+import Frontpage from "./components/Frontpage";
+
 
  
 
@@ -40,6 +42,9 @@ function App() {
   <Header facade={facade} loggedIn={loggedIn} logout={logout} />
   <Switch>
   <Route exact path="/">
+    <Frontpage/>
+    </Route>
+  <Route exact path="/login">
     <LoginPage
               loggedIn={loggedIn}
               setLoggedIn={setLoggedIn}
