@@ -9,6 +9,15 @@ function FoodPlan({facade, setErrorMessage}) {
 
     const[recipes, setRecipes] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const[weeknumber, setWeekNumber] = useState(1);
+    console.log(weeknumber)
+
+    useEffect(() => {
+        var currentdate = new Date();
+        var oneJan = new Date(currentdate.getFullYear(),0,1);
+        var numberOfDays = Math.floor((currentdate - oneJan) / (24 * 60 * 60 * 1000));
+        setWeekNumber(Math.ceil(( currentdate.getDay() + 1 + numberOfDays) / 7));
+    })
 
     const updateRecipes = (data) => {
         console.log(data)
@@ -26,7 +35,7 @@ function FoodPlan({facade, setErrorMessage}) {
     const saveData = (evt) => {
         evt.preventDefault();
         console.log("Saving weekly plan") 
-        facade.saveData('recipe/weekly/SuperAwesomeUser/48', updateSaveData, setErrorMessage, recipes);
+        facade.saveData('recipe/weekly/SuperAwesomeUser/' + weeknumber, updateSaveData, setErrorMessage, recipes);
     }
 
     const updateSaveData = (data) => {

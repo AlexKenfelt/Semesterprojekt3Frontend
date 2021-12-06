@@ -21,6 +21,7 @@ import LoginPage from "./components/LoginPage";
 import Profile from "./components/Profile";
 import Groceries from "./components/Groceries";
 import Frontpage from "./components/Frontpage";
+import Signup from "./components/Signup";
 
 
  
@@ -71,6 +72,9 @@ function App() {
     </Route>
     <Route exact path="/groceries">
               <Groceries facade={facade} setErrorMessage={setErrorMessage} />
+    </Route>
+    <Route exact path="/signup">
+              <Signup facade={facade} setErrorMessage={setErrorMessage} />
     </Route>
   </Switch>
     </div>
