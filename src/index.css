@@ -29,7 +29,7 @@ ul.header {
  }
 
 .bg-image {
-  opacity: 0.3;
+  opacity: 0.4;
   position: fixed;
   z-index: -1;
   width: 100%;
@@ -64,7 +64,8 @@ ul.header {
 
  /** Navbar CSS **/
  .navbar.bg-light {
-  background-color: #f3e2b3 !important;
+  background-color: white;
+  border-bottom: 1px solid black;
  }
 
  .form-control {
@@ -88,8 +89,7 @@ table {
 
 }
 
- th {
-
+th {
   margin: 0;
   border: 1px solid;
   padding: 10px;
@@ -103,9 +103,7 @@ td {
   content: 70px;
   font-family: 'Segoe UI';
   font-size: smaller;
-  height: 370px;
-
-
+  height: 350px;
 }
 
 td.dinner {
@@ -113,11 +111,9 @@ td.dinner {
   float: left;
   color: solid black;
   font-style: bold;
-  
 }
 
 th.col {
-  
   text-align: left top;
 }
 
@@ -127,23 +123,25 @@ tr {
 
 button.random {
   background-color: #E9ECF0; 
-  border: none;
+  border: 1px solid;
   color: black;
   padding: 7px 20px;
-  text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  
 }
 
 button.confirm {
-  background-color: greenyellow; 
-  border: none;
+  background-color: #E9ECF0; 
+  border: 1px solid;
   color: black;
   padding: 7px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+
+.button-foodplan {
+  text-align: center;
 }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {NavLink} from "react-router-dom";
 
 export default function LogIn({ facade, setLoggedIn, setErrorMessage })
 {
@@ -21,7 +22,7 @@ export default function LogIn({ facade, setLoggedIn, setErrorMessage })
                 <h2>login</h2>
                 <input style={{textAlign:"center"}} placeholder="username" id="username" />
                 <input style={{textAlign:"center"}} placeholder="password" id="password" />
-                <button onClick={performLogin}>login</button>
+                <NavLink to = "/home"><button onClick={performLogin}>login</button></NavLink>
             </form>
         </div>
     )

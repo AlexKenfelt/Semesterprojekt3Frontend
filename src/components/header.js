@@ -6,11 +6,8 @@ export default function Header({ logout }) {
     <div>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <NavLink class="navbar-brand" to="/home">
-    <img src="https://previews.123rf.com/images/larryrains/larryrains1606/larryrains160600061/57535585-happy-tomato.jpg" width="30" height="30" class="d-inline-block align-top" alt=""/>
-      Home
-  </NavLink>
-    <form class="form-inline  ">
+    <NavLink class="navbar-brand" to = "/home">home</NavLink>
+    <form class="form-inline">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
 
     </form>
@@ -22,13 +19,13 @@ export default function Header({ logout }) {
       <div class="mr-auto"></div>
       <ul class="navbar-nav my-2 my-lg-0">
         <li class="nav-item active">
-        <NavLink class="nav-link" to="/home">Home<span class="sr-only">(current)</span></NavLink>
+        <NavLink class="nav-link" to="/home">home<span class="sr-only">(current)</span></NavLink>
       </li>
       <li class="nav-item active">
-        <NavLink class="nav-link" to="/foodplan">Weekly planner<span class="sr-only">(current)</span></NavLink>
+        <NavLink class="nav-link" to="/foodplan">weekly planner<span class="sr-only">(current)</span></NavLink>
       </li>
       <li class="nav-item active">
-        <NavLink class="nav-link" to="/groceries">Groceries<span class="sr-only">(current)</span></NavLink>
+        <NavLink class="nav-link" to="/groceries">groceries<span class="sr-only">(current)</span></NavLink>
       </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-display="static" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

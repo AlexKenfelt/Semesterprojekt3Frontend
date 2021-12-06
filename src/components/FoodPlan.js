@@ -36,7 +36,11 @@ function FoodPlan({facade, setErrorMessage}) {
 
     return ( 
         <div>
-            <h1 class="foodTitle">Make your food plan </h1>
+        <div className = "bg-image">
+          <img height="100%" width="100%" src = {require ("../images/Background.png").default}/>
+        </div>
+
+            <h1 style={{textAlign: "center", fontSize: "xx-large"}} class="foodTitle">make your food plan</h1>
             
             <div>
             <table class="table table-bordered">
@@ -57,7 +61,6 @@ function FoodPlan({facade, setErrorMessage}) {
                         {recipes.length === 0 ? <><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></>: recipes.map((r) => {
                         return(
                                 <td>{r.title}</td>
-                          
                         )
                     })}
                     <td class="dinner"> dinner </td> 
@@ -65,9 +68,10 @@ function FoodPlan({facade, setErrorMessage}) {
                 </tbody>
                 </table>
             </div>
-            <button class="random" onClick={handleClick}>Random</button>
-
-            <button class="confirm" onClick={saveData}>Confirm</button>
+            <div className="button-foodplan">
+                <button onClick={handleClick}>random</button>
+                <button onClick={saveData}>confirm</button>
+            </div>
         </div>
      );
 

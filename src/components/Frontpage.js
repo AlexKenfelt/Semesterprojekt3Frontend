@@ -1,4 +1,5 @@
 import LoginPage from "./LoginPage";
+import {NavLink} from "react-router-dom";
 
 function Frontpage() {
     return ( 
@@ -11,7 +12,7 @@ function Frontpage() {
         <div className="frontpage">
             <p className="text-frontpage" style={{backgroundColor:"white",border: "solid", width: "500px", textAlign: "center", height:"50px", fontSize:"30px"}}>weekly food planner</p>
             <div style={{display:"flex", gap:"100px"}}>
-            <p><button style={{width:"200px", backgroundColor:"white"}} onClick={LoginPage}>login</button></p>
+            <NavLink to = "/login"><p><button style={{width:"200px", backgroundColor:"white"}} onClick={LoginPage}>login</button></p></NavLink>
             <p><button style={{width:"200px", backgroundColor:"white"}} onClick={LoginPage}>signup</button></p>
             </div>
         </div>
