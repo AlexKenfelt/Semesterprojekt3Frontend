@@ -11,7 +11,6 @@ function LoginPage({ logout, loggedIn, setLoggedIn, facade, setErrorMessage }) {
         </div>
 
     <div>
-    <div>
       {!loggedIn ? (
         <LogIn facade={facade} setLoggedIn={setLoggedIn} setErrorMessage={setErrorMessage} />
       ) : (
@@ -20,7 +19,6 @@ function LoginPage({ logout, loggedIn, setLoggedIn, facade, setErrorMessage }) {
           <p>Role: {facade.getUserRoles()}</p>
         </div>
       )}
-      </div> 
     </div>
     </div>
   );

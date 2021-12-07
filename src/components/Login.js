@@ -10,11 +10,13 @@ export default function LogIn({ facade, setLoggedIn, setErrorMessage })
     {
         evt.preventDefault();
         facade.login(loginCredentials.username, loginCredentials.password, setLoggedIn, setErrorMessage)
+        window.location.href="home"
     }
     
     const onChange = (evt) =>
     {
         setLoginCredentials({ ...loginCredentials, [evt.target.id]: evt.target.value })
+        
     }
 
     return (
@@ -23,7 +25,7 @@ export default function LogIn({ facade, setLoggedIn, setErrorMessage })
                 <h2>login</h2>
                 <input style={{textAlign:"center"}} placeholder="username" id="username" />
                 <input style={{textAlign:"center"}} placeholder="password" id="password" />
-                <NavLink to = "/home"><button onClick={performLogin}>login</button></NavLink>
+                <button onClick={performLogin}>login</button>
             </form>
         </div>
     )

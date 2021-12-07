@@ -1,6 +1,6 @@
 import {NavLink} from "react-router-dom";
 
-export default function Header({ logout }) {
+export default function Header({ logout, facade }) {
     return (
       //<a> tags needs to be Navlink tags inorder to works fx set change profile once it is made. 
     <div>
@@ -10,6 +10,8 @@ export default function Header({ logout }) {
         <NavLink class="navbar-brand" to="/foodplan">weekly planner<span class="sr-only">(current)</span></NavLink>
         <NavLink class="navbar-brand" to="/groceries">groceries<span class="sr-only">(current)</span></NavLink>
         <button class="btn btn-link navbar-brand" style={{outline: "none"}} onClick={logout}>logout</button>
+        <p class="navbar-brand">Role: {facade.getUserName()}</p>
+
 
         <form class="form-inline">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
