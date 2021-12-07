@@ -80,7 +80,6 @@ ul.header {
 
  /* Weekly Food Plan CSS */
 
-
 table {
   table-layout: fixed;
   tab-size: 100px;
@@ -145,3 +144,8 @@ button.confirm {
 .button-foodplan {
   text-align: center;
 }
+
+.navbar.bg-light {
+  border-right: 1px solid #000;
+}
+

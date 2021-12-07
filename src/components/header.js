@@ -6,43 +6,17 @@ export default function Header({ logout }) {
     <div>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <NavLink class="navbar-brand" to = "/home">home</NavLink>
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+        <NavLink class="navbar-brand mb-0 h2" to = "/home">home</NavLink>
+        <NavLink class="navbar-brand" to="/foodplan">weekly planner<span class="sr-only">(current)</span></NavLink>
+        <NavLink class="navbar-brand" to="/groceries">groceries<span class="sr-only">(current)</span></NavLink>
+        <button class="btn btn-link navbar-brand" style={{outline: "none"}} onClick={logout}>logout</button>
 
-    </form>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+        </form>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <div class="mr-auto"></div>
-      <ul class="navbar-nav my-2 my-lg-0">
-        <li class="nav-item active">
-        <NavLink class="nav-link" to="/home">home<span class="sr-only">(current)</span></NavLink>
-      </li>
-      <li class="nav-item active">
-        <NavLink class="nav-link" to="/foodplan">weekly planner<span class="sr-only">(current)</span></NavLink>
-      </li>
-      <li class="nav-item active">
-        <NavLink class="nav-link" to="/groceries">groceries<span class="sr-only">(current)</span></NavLink>
-      </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-display="static" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Profile
-        </a>
-          <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdown">
-            <h6 class="dropdown-header">Dropdown header</h6>
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-          </div>
-
-        </li>
-
-      </ul>
-
-      </div>
-  </nav>
+        
+    </nav>
     </div>
     );
 
