@@ -9,7 +9,6 @@ function Home({facade}) {
 
     <div className="home-text">
       <h1>homepage</h1>
-      <p>Role: {facade.getUserName()}</p>
     </div>
     </div>
 
