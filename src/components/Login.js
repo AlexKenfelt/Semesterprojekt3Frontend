@@ -1,8 +1,9 @@
 import { useState } from "react";
-import {NavLink} from "react-router-dom";
+import {NavLink, useHistory} from "react-router-dom";
 
 export default function LogIn({ facade, setLoggedIn, setErrorMessage })
 {
+    const history = useHistory();
     const init = { username: "", password: "" };
     const [loginCredentials, setLoginCredentials] = useState(init);
 
@@ -10,7 +11,7 @@ export default function LogIn({ facade, setLoggedIn, setErrorMessage })
     {
         evt.preventDefault();
         facade.login(loginCredentials.username, loginCredentials.password, setLoggedIn, setErrorMessage)
-        window.location.href="home"
+        history.push("/home");
     }
     
     const onChange = (evt) =>
