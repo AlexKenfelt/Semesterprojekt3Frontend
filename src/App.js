@@ -54,7 +54,7 @@ function App() {
             />
     </Route>
     <Route exact path="/home">
-    <Home facade={facade}/>
+    <Home/>
     </Route>
     <Route exact path="/user">
     {facade.hasUserAccess('user', loggedIn) && 

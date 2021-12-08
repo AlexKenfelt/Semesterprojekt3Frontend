@@ -8,26 +8,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/** CSS for the old navbar, let's keep this for now **/
-ul.header {
-  list-style-type: none;
-  border: 1px solid black;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: rgb(255, 255, 255);
- }
- 
- ul.header li { float: left; border: 1px solid black;}
- 
- ul.header li a {
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
- }
-
 .bg-image {
   opacity: 0.4;
   position: fixed;
