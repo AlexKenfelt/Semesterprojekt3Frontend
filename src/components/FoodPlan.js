@@ -12,11 +12,17 @@ function FoodPlan({facade, setErrorMessage}) {
     const[weeknumber, setWeekNumber] = useState(1);
     console.log(weeknumber)
 
-    useEffect(() => {
+    useEffect((evt) => {
+        evt.preventDefault();
+        //This is just the calculations for the week number, used in our fetch and is being displayed in the table.
         var currentdate = new Date();
         var oneJan = new Date(currentdate.getFullYear(),0,1);
         var numberOfDays = Math.floor((currentdate - oneJan) / (24 * 60 * 60 * 1000));
         setWeekNumber(Math.ceil(( currentdate.getDay() + 1 + numberOfDays) / 7));
+
+        //This is the fetch for our table so if the used already have a meal plan saved we will make sure to display that.
+        //...
+        facade.fetchData('Placeholder', updateRecipes, setErrorMessage);
     })
 
     const updateRecipes = (data) => {
@@ -62,7 +68,7 @@ function FoodPlan({facade, setErrorMessage}) {
                             <th scope="col">friday</th>
                             <th scope="col">saturday</th>
                             <th scope="col">sunday</th>
-                            <th scope="col">u48</th>
+                            <th scope="col">week - {weeknumber}</th>
                         </tr>
                 </thead>
                 <tbody>
