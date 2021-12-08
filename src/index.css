@@ -52,10 +52,6 @@ body {
   border-radius: 4.25rem;
   }
 
-/** This is not currently being used right? **/
- ul.header li a:hover:not(.active) { background-color: rgb(240, 240, 240);}
- .active { background-color: #d8d8d8;}
-
 
 
  /* Weekly Food Plan CSS */
@@ -127,5 +123,9 @@ button.confirm {
 
 .navbar.bg-light {
   border-right: 1px solid #000;
+  width: 100%;
 }
 
+.name {
+  text-align: center;
+}

@@ -18,6 +18,10 @@ function Signup({ facade, setErrorMessage }) {
 
     return (
         <div>
+            <div className = "bg-image">
+          <img height="100%" width="100%" src = {require ("../images/Background.png").default}/>
+        </div>
+
             <form onChange={onChange} className="login" >
                 <h2>Signup here</h2>
                 <input style={{textAlign:"center"}} placeholder="username" id="username" />
