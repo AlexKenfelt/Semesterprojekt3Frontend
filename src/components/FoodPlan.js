@@ -35,7 +35,7 @@ function FoodPlan({facade, setErrorMessage}) {
     const saveData = (evt) => {
         evt.preventDefault();
         console.log("Saving weekly plan") 
-        facade.saveData('recipe/weekly/SuperAwesomeUser/' + weeknumber, updateSaveData, setErrorMessage, recipes);
+        facade.saveData('recipe/weekly/' + facade.getUserName() + '/' + weeknumber, updateSaveData, setErrorMessage, recipes);
     }
 
     const updateSaveData = (data) => {
