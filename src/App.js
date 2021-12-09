@@ -42,9 +42,11 @@ function App() {
     <div>
   <Header facade={facade} loggedIn={loggedIn} logout={logout} />
   <Switch>
+
   <Route exact path="/">
     <Frontpage/>
     </Route>
+
   <Route exact path="/login">
     <LoginPage
               loggedIn={loggedIn}
@@ -53,26 +55,38 @@ function App() {
               setErrorMessage={setErrorMessage}
             />
     </Route>
+
     <Route exact path="/home">
-    <Home/>
+    {facade.hasUserAccess('user', loggedIn) && 
+    <Home/>}
     </Route>
+
     <Route exact path="/user">
     {facade.hasUserAccess('user', loggedIn) && 
               <User facade={facade} setErrorMessage={setErrorMessage} />}
     </Route>
+
+
     <Route exact path="/admin">
     {facade.hasUserAccess('admin', loggedIn) && 
               <Admin facade={facade} setErrorMessage={setErrorMessage} />}
     </Route>
+
     <Route exact path="/foodplan">
-              <FoodPlan facade={facade} setErrorMessage={setErrorMessage} />
+    {facade.hasUserAccess('user', loggedIn) && 
+              <FoodPlan facade={facade} setErrorMessage={setErrorMessage} />}
     </Route>
+
     <Route exact path="/profile">
-              <Profile facade={facade} setErrorMessage={setErrorMessage} />
+    {facade.hasUserAccess('user', loggedIn) && 
+              <Profile facade={facade} setErrorMessage={setErrorMessage} />}
     </Route>
+
     <Route exact path="/groceries">
-              <Groceries facade={facade} setErrorMessage={setErrorMessage} />
+    {facade.hasUserAccess('user', loggedIn) && 
+              <Groceries facade={facade} setErrorMessage={setErrorMessage} />}
     </Route>
+
     <Route exact path="/signup">
               <Signup facade={facade} setErrorMessage={setErrorMessage} />
     </Route>

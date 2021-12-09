@@ -1,10 +1,11 @@
 import {NavLink, Link} from "react-router-dom";
 
 
-export default function Header({ logout, facade }) {
+export default function Header({ logout, facade, loggedIn }) {
     return (
       //<a> tags needs to be Navlink tags inorder to works fx set change profile once it is made. 
     <div>
+       {facade.hasUserAccess('user', loggedIn) && (
       <nav class="navbar navbar-expand-lg navbar-light bg-light" style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
         <div>
           <Link class="navbar-brand h2" to = "/home">home</Link>
@@ -25,6 +26,7 @@ export default function Header({ logout, facade }) {
         </div>
         
     </nav>
+       )}
     </div>
     );
 
