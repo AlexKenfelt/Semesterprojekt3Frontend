@@ -29,9 +29,13 @@ function Groceries({ facade, setErrorMessage }) {
 }
 return (
   <div>
+     <div className = "bg-image">
+          <img height="100%" width="100%" src = {require ("../images/Background.png").default}/>
+        </div>
+  <div class="ei">
     {ingredients.map((recipe, index) => (
       <div key={index}>
-        <h2>{recipe.title}</h2>
+        <h4>{recipe.title}</h4>
 
         {/* loop */}
         <div>
@@ -44,6 +48,7 @@ return (
       </div>
     ))}
     <button onClick={loadFoodPlan}>load Groceries</button>
+  </div>
   </div>
   
 );
