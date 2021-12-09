@@ -24,7 +24,7 @@ function Admin({facade, setErrorMessage}) {
         
         <div>
             <h1>Active Users</h1>
-            <ul >{users.map((user) => <li>{user.userName}</li>)}</ul>
+            <ul>{users.map((user) => <li>{user.userName}</li>)}</ul>
             <button onClick={loadUsers}>get users</button>
         </div>
         </div>
