@@ -1,7 +1,18 @@
-import {NavLink, Link} from "react-router-dom";
+import {NavLink, Link, useHistory} from "react-router-dom";
 
 
 export default function Header({ logout, facade, loggedIn }) {
+
+  const history = useHistory();
+
+  const performLogout = (evt) =>
+  {
+      evt.preventDefault();
+      logout()
+      history.push("/");
+  }
+
+
     return (
       //<a> tags needs to be Navlink tags inorder to works fx set change profile once it is made. 
     <div>
@@ -22,21 +33,11 @@ export default function Header({ logout, facade, loggedIn }) {
            <input class="form-control mr-sm-2" type="search" placeholder="search" aria-label="Search"/>
         </form>
 
-        <button class="navbar-brand btn btn-link" style={{outline: "none"}} onClick={logout}>logout</button>
+        <button class="navbar-brand btn btn-link" style={{outline: "none"}} onClick={performLogout}>logout</button>
         </div>
         
     </nav>
        )}
     </div>
     );
-
-
-/*
-      <ul className="header">
-        <li><NavLink exact activeClassName="active" to="/">Home</NavLink></li>
-        <li><NavLink activeClassName="active" to="/user">User</NavLink></li>
-        <li><NavLink activeClassName="active" to="/admin">Admin</NavLink></li>
-        <li><NavLink activeClassName="active" to="/foodplan">Weekly foodplan</NavLink></li>
-      </ul>
-*/
   }

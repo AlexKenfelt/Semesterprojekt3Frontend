@@ -1,8 +1,9 @@
 import { useState } from "react";
-import {NavLink} from "react-router-dom";
+import {NavLink, useHistory} from "react-router-dom";
 
 function Signup({ facade, setErrorMessage }) {
 
+    const history = useHistory();
     const init = { username: "", password: "" };
     const [loginCredentials, setLoginCredentials] = useState(init);
 
@@ -10,6 +11,7 @@ function Signup({ facade, setErrorMessage }) {
     {
         evt.preventDefault();
         facade.signup(loginCredentials.username, loginCredentials.password, setErrorMessage)
+        history.push("/login");
     }
     const onChange = (evt) =>
     {
@@ -26,7 +28,7 @@ function Signup({ facade, setErrorMessage }) {
                 <h2>Signup here</h2>
                 <input style={{textAlign:"center"}} placeholder="username" id="username" />
                 <input style={{textAlign:"center"}} placeholder="password" id="password" />
-                <NavLink to = "/login"><button onClick={performSignup}>signup</button></NavLink>
+                <button onClick={performSignup}>signup</button>
             </form>
         </div>
     )
