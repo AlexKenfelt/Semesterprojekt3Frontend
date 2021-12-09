@@ -8,34 +8,51 @@ import { useEffect, useState } from "react";
 function FoodPlan({facade, setErrorMessage}) {
 
     const[recipes, setRecipes] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
+    //const [isLoading, setIsLoading] = useState(false);
     const[weeknumber, setWeekNumber] = useState(1);
     console.log(weeknumber)
 
     useEffect(() => {
+        //This is just the calculations for the week number, used in our fetch and is being displayed in the table.
         var currentdate = new Date();
         var oneJan = new Date(currentdate.getFullYear(),0,1);
         var numberOfDays = Math.floor((currentdate - oneJan) / (24 * 60 * 60 * 1000));
         setWeekNumber(Math.ceil(( currentdate.getDay() + 1 + numberOfDays) / 7));
-    })
+
+        
+        //This is the fetch for our table so if the user already have a meal plan saved we will make sure to display that.
+        //facade.fetchData('recipe/foodplan/' + facade.getUserName() + '/' + weeknumber, updateRecipes, setErrorMessage); 
+
+    }, [/*We can put something here so it only loads on change like weeknumber*/]);
+
+    const loadFoodPlan = (evt) => {
+        evt.preventDefault();
+        facade.fetchData('recipe/foodplan/' + facade.getUserName() + '/' + weeknumber, updateRecipes2, setErrorMessage); 
+    }
+
+    const updateRecipes2 = (data) => {
+        console.log(data)
+        setRecipes(data);
+        //setIsLoading(false)
+    }
 
     const updateRecipes = (data) => {
         console.log(data)
         setRecipes(data.recipes);
-        setIsLoading(false)
+        //setIsLoading(false)
     }
 
     const handleClick = (evt) => {
         evt.preventDefault();
         console.log("Hello World!") 
-        setIsLoading(false)
+        //setIsLoading(false)
         facade.fetchData('recipe/weekly', updateRecipes, setErrorMessage);
     };
 
     const saveData = (evt) => {
         evt.preventDefault();
         console.log("Saving weekly plan") 
-        facade.saveData('recipe/weekly/SuperAwesomeUser/' + weeknumber, updateSaveData, setErrorMessage, recipes);
+        facade.saveData('recipe/weekly/' + facade.getUserName() + '/' + weeknumber, updateSaveData, setErrorMessage, recipes);
     }
 
     const updateSaveData = (data) => {
@@ -62,7 +79,7 @@ function FoodPlan({facade, setErrorMessage}) {
                             <th scope="col">friday</th>
                             <th scope="col">saturday</th>
                             <th scope="col">sunday</th>
-                            <th scope="col">u48</th>
+                            <th scope="col">week - {weeknumber}</th>
                         </tr>
                 </thead>
                 <tbody>
@@ -80,6 +97,7 @@ function FoodPlan({facade, setErrorMessage}) {
             <div className="button-foodplan">
                 <button onClick={handleClick}>random</button>
                 <button onClick={saveData}>confirm</button>
+                <button onClick={loadFoodPlan}>loadFoodPlan</button>
             </div>
         </div>
      );

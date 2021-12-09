@@ -1,9 +1,9 @@
 
-function Home({facade}) {
+function Home() {
   
   return (
     <div>
-    <div className = "bg-image">
+        <div className = "bg-image">
           <img height="100%" width="100%" src = {require ("../images/Background.png").default}/>
         </div>
 
