@@ -5,7 +5,7 @@ import LogIn from "./components/Login";
 import Home from './components/home';
 import Header from './components/header';
 import User from "./components/user";
-import Admin from "./components/admin";
+import Admin from "./components/Admin";
 import FoodPlan from "./components/FoodPlan";
 import {
   BrowserRouter as Router,
@@ -68,8 +68,7 @@ function App() {
 
 
     <Route exact path="/admin">
-    {facade.hasUserAccess('admin', loggedIn) && 
-              <Admin facade={facade} setErrorMessage={setErrorMessage} />}
+              <Admin facade={facade} setErrorMessage={setErrorMessage} />
     </Route>
 
     <Route exact path="/foodplan">
@@ -96,12 +95,3 @@ function App() {
  
 }
 export default App;
-
-/* <div>
-      {!loggedIn ? (<LogIn login={login} />) :
-        (<div>
-          <LoggedIn facade={facade} />
-          <button onClick={logout}>Logout</button>
-        </div>)}
-    </div>
-*/

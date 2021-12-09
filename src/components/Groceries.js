@@ -47,8 +47,8 @@ return (
         </div>
       </div>
     ))}
-    <button onClick={loadFoodPlan}>load Groceries</button>
   </div>
+  <button onClick={loadFoodPlan}>load Groceries</button>
   </div>
   
 );
