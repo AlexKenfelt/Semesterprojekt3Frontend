@@ -52,8 +52,6 @@ body {
   border-radius: 4.25rem;
   }
 
-
-
  /* Weekly Food Plan CSS */
 
 table {
@@ -124,8 +122,4 @@ button.confirm {
 .navbar.bg-light {
   border-right: 1px solid #000;
   width: 100%;
-}
-
-.name {
-  text-align: center;
 }

@@ -5,6 +5,7 @@ export default function Header({ logout, facade }) {
     return (
       //<a> tags needs to be Navlink tags inorder to works fx set change profile once it is made. 
     <div>
+      
       <nav class="navbar navbar-expand-lg navbar-light bg-light" style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
         <div>
           <Link class="navbar-brand h2" to = "/home">home</Link>
