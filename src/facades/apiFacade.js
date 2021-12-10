@@ -1,4 +1,5 @@
-const URL = "http://localhost:8080/test";
+const URL = "https://www.akenfelt.dk/tomcat/weeklyplanner";
+
  
 function handleHttpErrors(res)
 {
